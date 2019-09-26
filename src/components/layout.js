@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import "../styles/main.css"
 
 import Header from "./header"
 import "./layout.css"
@@ -25,7 +26,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -34,6 +34,18 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
+        <header id="header">
+          <div class="inner">
+            <a href="index.html" class="logo">
+              Data Mining
+            </a>
+            <nav id="nav">
+              <a href="index.html">Home</a>
+              <a href="generic.html">Generic</a>
+              <a href="elements.html">Elements</a>
+            </nav>
+          </div>
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
